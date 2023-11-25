@@ -1,5 +1,5 @@
-#ifndef 
-#define
+#ifndef Logger_h
+#define Logger_h
 
 
 
