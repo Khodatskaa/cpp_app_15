@@ -7,6 +7,9 @@
     <Filter Include="Logger">
       <UniqueIdentifier>{6207823b-e05c-4525-b57f-35b3eea6738d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Rectangle">
+      <UniqueIdentifier>{3aa1db83-d2f5-4689-9dbd-7761d2ccb2a5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -16,6 +19,9 @@
   <ItemGroup>
     <ClInclude Include="Logger.h">
       <Filter>Logger</Filter>
+    </ClInclude>
+    <ClInclude Include="Rectangle.h">
+      <Filter>Rectangle</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
