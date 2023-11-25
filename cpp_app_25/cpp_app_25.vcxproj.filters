@@ -4,10 +4,18 @@
     <Filter Include="Main">
       <UniqueIdentifier>{19e32342-8419-41bf-af00-dd26783c2fe7}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Logger">
+      <UniqueIdentifier>{6207823b-e05c-4525-b57f-35b3eea6738d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
       <Filter>Main</Filter>
     </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Logger.h">
+      <Filter>Logger</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
