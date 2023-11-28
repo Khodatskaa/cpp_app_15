@@ -1,44 +1,50 @@
-#include "logger.h"
 #include "fraction.h"
+#include "logger.h"
+#include <iostream>
+using namespace std;
 
 int main() 
 {
-    Logger::log("Creating fractions...");
-    Fraction frac1(2, 4);
-    Fraction frac2(5, 8);
 
-    Logger::log("Performing arithmetic operations...");
-    Fraction sum = frac1 + frac2;
-    Fraction diff = frac1 - frac2;
-    Fraction product = frac1 * frac2;
-    Fraction quotient = frac1 / frac2;
+    cout << "Enter numerator and denominator for fraction 1: ";
+    int num1, den1;
+    cin >> num1 >> den1;
+    Fraction fraction1(num1, den1);
 
-    Logger::log("Displaying results...");
-    std::cout << "Sum: ";
+    cout << "Enter numerator and denominator for fraction 2: ";
+	int num2, den2;
+    cin >> num2 >> den2;
+	Fraction fraction2(num2, den2);
+
+
+    Logger::log("Fraction 1: ");
+    fraction1.display();
+    Logger::log("\n");
+
+    Logger::log("Fraction 2: ");
+    fraction2.display();
+    Logger::log("\n");
+
+    Fraction sum = fraction1.add(fraction2);
+    Fraction diff = fraction1.subtract(fraction2);
+    Fraction prod = fraction1.multiply(fraction2);
+    Fraction quot = fraction1.divide(fraction2);
+
+    Logger::log("Sum: ");
     sum.display();
-    std::cout << std::endl;
+    Logger::log("\n");
 
-    std::cout << "Difference: ";
+    Logger::log("Difference: ");
     diff.display();
-    std::cout << std::endl;
+    Logger::log("\n");
 
-    std::cout << "Product: ";
-    product.display();
-    std::cout << std::endl;
+    Logger::log("Product: ");
+    prod.display();
+    Logger::log("\n");
 
-    std::cout << "Quotient: ";
-    quotient.display();
-    std::cout << std::endl;
-
-    Logger::log("Converting improper fraction to simple fraction...");
-    Fraction improper(7, 4);
-    Fraction simple = improper.toSimpleFraction();
-
-    std::cout << "Improper Fraction: ";
-    improper.display();
-    std::cout << " => Simple Fraction: ";
-    simple.display();
-    std::cout << std::endl;
+    Logger::log("Quotient: ");
+    quot.display();
+    Logger::log("\n");
 
     return 0;
 }

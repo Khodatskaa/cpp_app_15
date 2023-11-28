@@ -1,3 +1,4 @@
+
 #ifndef FRACTION_H
 #define FRACTION_H
 
@@ -8,59 +9,20 @@ private:
     int numerator;
     int denominator;
 
-    int gcd(int a, int b)
-    {
-        return b == 0 ? a : gcd(b, a % b);
-    }
-
-    void simplify() 
-    {
-        int commonDivisor = gcd(numerator, denominator);
-        numerator /= commonDivisor;
-        denominator /= commonDivisor;
-    }
-
 public:
-    Fraction() : numerator(0), denominator(1) {}
-    Fraction(int num, int denom) : numerator(num), denominator(denom) 
-    {
-        simplify();
-    }
+    Fraction(int num, int denom);
 
-    int getNumerator() const { return numerator; }
-    int getDenominator() const { return denominator; }
+    void reduce();
+    void toMixedNumber();
+    int getNumerator() const;
+    int getDenominator() const;
 
-    Fraction operator+(const Fraction& other) const
-    {
-        return Fraction(numerator * other.denominator + other.numerator * denominator, denominator * other.denominator);
-    }
+    Fraction add(const Fraction& other) const;
+    Fraction subtract(const Fraction& other) const;
+    Fraction multiply(const Fraction& other) const;
+    Fraction divide(const Fraction& other) const;
 
-    Fraction operator-(const Fraction& other) const
-    {
-        return Fraction(numerator * other.denominator - other.numerator * denominator, denominator * other.denominator);
-    }
-
-    Fraction operator*(const Fraction& other) const
-    {
-        return Fraction(numerator * other.numerator, denominator * other.denominator);
-    }
-
-    Fraction operator/(const Fraction& other) const 
-    {
-        return Fraction(numerator * other.denominator, denominator * other.numerator);
-    }
-
-    Fraction toSimpleFraction() const 
-    {
-        int wholePart = numerator / denominator;
-        int newNumerator = numerator % denominator;
-        return Fraction(newNumerator, denominator);
-    }
-
-    void display() const 
-    {
-        std::cout << numerator << "/" << denominator;
-    }
+    void display() const;
 };
 
-#endif 
+#endif // FRACTION_H
