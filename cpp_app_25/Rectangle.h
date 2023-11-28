@@ -31,7 +31,8 @@ public:
         Logger::log("Rectangle resized");
     }
 
-    void print() const {
+    void print() const 
+    {
         Logger::log("Rectangle:");
         Logger::log("Position: (" + std::to_string(x) + ", " + std::to_string(y) + ")");
         Logger::log("Size: " + std::to_string(width) + " x " + std::to_string(height));
